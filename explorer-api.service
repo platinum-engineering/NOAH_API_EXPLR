@@ -1,0 +1,19 @@
+[Unit]
+Description=Noah Explorer API Service
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+KillMode=process
+TimeoutStartSec=10
+Restart=always
+RestartSec=15s
+WorkingDirectory=/opt/noah/explorer/current
+ExecStart=/opt/noah/explorer/current/explorer -config=/opt/noah/explorer/current/config.json
+
+User=noah
+Group=noah
+
+[Install]
+WantedBy=multi-user.target
