@@ -20,6 +20,6 @@ func (Resource) Transform(model resource.ItemInterface, params ...interface{}) r
 		Coin:     stake.Coin.Symbol,
 		Address:  stake.OwnerAddress.GetAddress(),
 		Value:    helpers.QNoahStr2Noah(stake.Value),
-		BipValue: helpers.QNoahStr2Noah(stake.BipValue),
+		BipValue: helpers.QNoahStr2Noah(stake.NoahValue),
 	}
 }
